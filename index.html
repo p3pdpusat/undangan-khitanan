@@ -7,8 +7,8 @@
   <meta property="og:title" content="Undangan Khitanan Andy Fajar Ramadan">
   <meta property="og:description"
     content="Rabu, 23 Juli 2025 - Banjar Agung, Serang. Klik untuk lihat undangan digital.">
-  <meta property="og:image" content="https://example.com/andi.png">
-  <meta property="og:url" content="https://namadomainmu.com/undangan">
+  <meta property="og:image" content="https://undangan-khitanan-rosy.vercel.app/andi.png">
+  <meta property="og:url" content="https://undangan-khitanan-rosy.vercel.app/">
   <meta name="twitter:card" content="summary_large_image">
   <title>Undangan Khitanan - Andy Fajar Ramadan</title>
   <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Segoe+UI&display=swap" rel="stylesheet">
@@ -161,6 +161,13 @@
 </head>
 
 <body>
+  <div id="musicPrompt"
+    style="position:fixed;top:0;left:0;width:100%;height:100%;background:#000000aa;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;color:white;">
+    <p style="font-size:20px">Undangan Khitanan Andy Fajar Ramadan</p>
+    <button onclick="startMusic()"
+      style="padding:10px 20px;font-size:16px;border:none;background:#0e8fa0;color:white;border-radius:8px;">Buka
+      Undangan</button>
+  </div>
 
   <!-- Musik Latar -->
   <audio autoplay loop muted id="bg-music">
@@ -256,13 +263,14 @@
   </script>
 
   <script>
-    // Aktifkan suara setelah 1 detik (bypass autoplay policy di beberapa browser)
-    setTimeout(() => {
+    function startMusic() {
+      document.getElementById('musicPrompt').style.display = 'none';
       const audio = document.getElementById('bg-music');
       audio.muted = false;
       audio.play();
-    }, 1000);
+    }
   </script>
+
 </body>
 
 </html>
